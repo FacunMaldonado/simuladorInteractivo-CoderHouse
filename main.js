@@ -14,18 +14,23 @@ pruebaa.addEventListener('click', function(){
       prom= suma / 3;
     }  
     mejorProm.push(prom);
-    document.getElementById("sumando").innerHTML = 'La nota promedio final es: ' + prom; 
-    mejorPromedio(prom);
-   console.log(mejorProm)
+    console.log('LONGITUD: ',mejorProm.length)
+    document.getElementById("prueba").innerHTML = 'La nota promedio final es: ' + prom; 
+   console.log('ARRAY: ',mejorProm)
 });
 
-function mejorPromedio (prom){
-  let masAlto = 0;
-  for (i=0 ; i < mejorProm.length ;i++){
-    if (masAlto > prom){
-      masAlto = prom;
-    }
-  }
-  document.getElementById("sumando2").innerHTML = 'El mejor promedio ingresado al momento es: ' + masAlto;
-}
+//boton calcular mejor promedio
+let MP = document.querySelector('.mejorPromedio')
+let mayor = -1;
 
+MP.addEventListener('click',function(){
+    for(let i = 0; i < mejorProm.length ; i++){
+      console.log('hola')
+      if (mejorProm[i] > mayor){
+        mayor = mejorProm[i]
+      }
+    }
+    document.getElementById("mejorPromedio").innerHTML = 'El mayor promedio hasta el momento es: ' + mayor; 
+    console.log('MAYororror: ',mayor)
+  });
+  
